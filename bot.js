@@ -237,3 +237,4 @@ const job = new CronJob(
   true,
   "America/Sao_Paulo"
 );
+job.start();
