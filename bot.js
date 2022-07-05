@@ -1,7 +1,6 @@
 console.log("WorkIt\nMakeIt\nDoIt");
 
 require("dotenv").config();
-const CronJob = require("cron").CronJob;
 const Twit = require("twit");
 const config = {
   consumer_key: process.env.consumer_key,
@@ -230,11 +229,4 @@ function botInit() {
   }
 }
 
-const job = new CronJob(
-  "0 0 8 * * *",
-  botInit(),
-  null,
-  true,
-  "America/Sao_Paulo"
-);
-job.start();
+setInterval(botInit, dias);
