@@ -229,4 +229,5 @@ function botInit() {
   }
 }
 
+botInit();
 setInterval(botInit, dias);
