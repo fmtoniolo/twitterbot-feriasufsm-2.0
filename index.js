@@ -227,5 +227,4 @@ exports.handler = async event => {
       }
     }
   }
-  //return "\n\nAll ok\n\n";
 };
