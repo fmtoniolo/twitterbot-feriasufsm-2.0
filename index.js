@@ -1,19 +1,18 @@
 const Twit = require("twit");
 
-exports.handler = async (event) => {
-
+exports.handler = async event => {
   console.log("WorkIt\nMakeIt\nDoIt");
 
   const config = {
-    consumer_key: "go7ie5TmkCH8o1Cnnc7HMymKV",
-    consumer_secret: "IIyjQoDGWqS80ICeUE6i9XMGOzLG98h7rCTkKM7S7vqiqJaGL9",
-    access_token: "1533824260187336704-FSjUFEg2uG1KyvTaAk21kkaYo64Fcc",
-    access_token_secret: "dszEReXNsh2ghnIHmhT3jhrKNOoL2Wq4Fe3NxKZqo15xk"
+    consumer_key: "NameIt",
+    consumer_secret: "ReadIt",
+    access_token: "TuneIt",
+    access_token_secret: "PrintIt"
   };
 
   const T = new Twit(config);
   const ferias = new Date("08/19/2022"); //mm/dd/yyyy
-  const aulas = new Date("04/11/2022");  //mm/dd/yyyy
+  const aulas = new Date("04/11/2022"); //mm/dd/yyyy
   const hoje = new Date();
   const dias = 86400000;
   const diasParaFerias = Math.ceil((ferias - Date.parse(hoje)) / dias);
@@ -29,14 +28,14 @@ exports.handler = async (event) => {
     switch (estamosEmAula) {
       case 30:
         await T.post(
-          "statuses/update", {
+          "statuses/update",
+          {
             status: `Boraaa! Falta um meszinho só 🥳`
           },
-          function(error, tweet, response) {
+          function (error, tweet, response) {
             if (!error) {
               console.log(tweet);
-            }
-            else if (error) {
+            } else if (error) {
               console.log(error);
             }
           }
@@ -44,14 +43,14 @@ exports.handler = async (event) => {
         break;
       case 15:
         await T.post(
-          "statuses/update", {
+          "statuses/update",
+          {
             status: `Bom diaa! Dentro de 15 dias estaremos oficialmente em férias.`
           },
-          function(error, tweet, response) {
+          function (error, tweet, response) {
             if (!error) {
               console.log(tweet);
-            }
-            else if (error) {
+            } else if (error) {
               console.log(error);
             }
           }
@@ -59,14 +58,14 @@ exports.handler = async (event) => {
         break;
       case 7:
         await T.post(
-          "statuses/update", {
+          "statuses/update",
+          {
             status: `Bom diaa! Daqui uma semaninha estaremos oficialmente em férias.`
           },
-          function(error, tweet, response) {
+          function (error, tweet, response) {
             if (!error) {
               console.log(tweet);
-            }
-            else if (error) {
+            } else if (error) {
               console.log(error);
             }
           }
@@ -74,14 +73,14 @@ exports.handler = async (event) => {
         break;
       case 1:
         await T.post(
-          "statuses/update", {
+          "statuses/update",
+          {
             status: `É amanhã! Falta 1 (UNZINHO) dia para as férias na UFSM.`
           },
-          function(error, tweet, response) {
+          function (error, tweet, response) {
             if (!error) {
               console.log(tweet);
-            }
-            else if (error) {
+            } else if (error) {
               console.log(error);
             }
           }
@@ -89,14 +88,14 @@ exports.handler = async (event) => {
         break;
       case 0:
         await T.post(
-          "statuses/update", {
+          "statuses/update",
+          {
             status: `SEXTOU! Tamo de férias 😎 #voltaremos`
           },
-          function(error, tweet, response) {
+          function (error, tweet, response) {
             if (!error) {
               console.log(tweet);
-            }
-            else if (error) {
+            } else if (error) {
               console.log(error);
             }
           }
@@ -104,49 +103,47 @@ exports.handler = async (event) => {
         break;
       default:
         await T.post(
-          "statuses/update", {
+          "statuses/update",
+          {
             status: `Faltam ${estamosEmAula} dias para as férias na UFSM 🥱`
           },
-          function(error, tweet, response) {
+          function (error, tweet, response) {
             if (!error) {
               console.log(tweet);
-            }
-            else if (error) {
+            } else if (error) {
               console.log(error);
             }
           }
         );
         break;
     }
-  }
-  else {
+  } else {
     if (estamosEmFerias < 0) {
       await T.post(
-        "statuses/update", {
+        "statuses/update",
+        {
           status: `Estamos em férias! Aguardando o calendário acadêmico.`
         },
-        function(error, tweet, response) {
+        function (error, tweet, response) {
           if (!error) {
             console.log(tweet);
-          }
-          else if (error) {
+          } else if (error) {
             console.log(error);
           }
         }
       );
-    }
-    else {
+    } else {
       switch (estamosEmFerias) {
         case 30:
           await T.post(
-            "statuses/update", {
+            "statuses/update",
+            {
               status: `Falta um mês para as aulas na UFSM 👀`
             },
-            function(error, tweet, response) {
+            function (error, tweet, response) {
               if (!error) {
                 console.log(tweet);
-              }
-              else if (error) {
+              } else if (error) {
                 console.log(error);
               }
             }
@@ -154,14 +151,14 @@ exports.handler = async (event) => {
           break;
         case 15:
           await T.post(
-            "statuses/update", {
+            "statuses/update",
+            {
               status: `Faltam 15 dias para as aulas na UFSM 👀`
             },
-            function(error, tweet, response) {
+            function (error, tweet, response) {
               if (!error) {
                 console.log(tweet);
-              }
-              else if (error) {
+              } else if (error) {
                 console.log(error);
               }
             }
@@ -169,14 +166,14 @@ exports.handler = async (event) => {
           break;
         case 7:
           await T.post(
-            "statuses/update", {
+            "statuses/update",
+            {
               status: `Última semana de férias 🥺. Faltam 7 dias para as aulas na UFSM.`
             },
-            function(error, tweet, response) {
+            function (error, tweet, response) {
               if (!error) {
                 console.log(tweet);
-              }
-              else if (error) {
+              } else if (error) {
                 console.log(error);
               }
             }
@@ -184,14 +181,14 @@ exports.handler = async (event) => {
           break;
         case 1:
           await T.post(
-            "statuses/update", {
+            "statuses/update",
+            {
               status: `Falta 1 dia para as aulas na UFSM. Aproveitaram as férias?`
             },
-            function(error, tweet, response) {
+            function (error, tweet, response) {
               if (!error) {
                 console.log(tweet);
-              }
-              else if (error) {
+              } else if (error) {
                 console.log(error);
               }
             }
@@ -199,14 +196,14 @@ exports.handler = async (event) => {
           break;
         case 0:
           await T.post(
-            "statuses/update", {
+            "statuses/update",
+            {
               status: `BORAA! Hoje começam as aulas na UFSM 😎 #voltamos`
             },
-            function(error, tweet, response) {
+            function (error, tweet, response) {
               if (!error) {
                 console.log(tweet);
-              }
-              else if (error) {
+              } else if (error) {
                 console.log(error);
               }
             }
@@ -214,14 +211,14 @@ exports.handler = async (event) => {
           break;
         default:
           await T.post(
-            "statuses/update", {
+            "statuses/update",
+            {
               status: `Faltam ${estamosEmFerias} dias para as aulas na UFSM 👀`
             },
-            function(error, tweet, response) {
+            function (error, tweet, response) {
               if (!error) {
                 console.log(tweet);
-              }
-              else if (error) {
+              } else if (error) {
                 console.log(error);
               }
             }

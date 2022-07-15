@@ -1,6 +1,3 @@
-# env file
-.env
-
 # dependency dir
 node_modules
 
